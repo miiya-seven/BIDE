@@ -261,7 +261,7 @@ function InjectScene({
     ? Math.round(profile.inject.avg_injected ?? 0)
     : Math.min(sample?.retrieved_top.length ?? 5, 5);
   const tokens = mode === "overall" ? profile.inject.avg_prompt_tokens : null;
-  const goldInPrompt = mode === "sample" && sample ? sample.gold_in_prompt : funnel.utilize > 0.5;
+  const goldInPrompt = mode === "sample" && sample ? sample.gold_in_prompt : (funnel.utilize ?? 0) > 0.5;
 
   const cards = Array.from({ length: Math.min(injCount + 2, 7) });
 
@@ -320,7 +320,7 @@ function AnswerScene({
   sample?: SampleTrace;
 }) {
   const accGivenGold = profile.answer.accuracy_given_gold;
-  const correct = mode === "sample" && sample ? sample.answer_correct : funnel.answer > 0.5;
+  const correct = mode === "sample" && sample ? sample.answer_correct : (funnel.answer ?? 0) > 0.5;
 
   return (
     <div>

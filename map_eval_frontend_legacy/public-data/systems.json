@@ -70,5 +70,26 @@
   "inject": "无记忆",
   "llm_extract": false,
   "oracle": "lower"
+ },
+ "mirix": {
+  "build": "多模态记忆抽取与分层存储",
+  "store": "结构化/向量混合存储",
+  "retrieve": "多通道语义检索",
+  "inject": "按相关性组织证据",
+  "llm_extract": true
+ },
+ "everos": {
+  "build": "长期记忆抽取与更新",
+  "store": "分层事件与实体存储",
+  "retrieve": "语义与时间联合检索",
+  "inject": "按证据相关性注入",
+  "llm_extract": true
+ },
+ "mnemis": {
+  "build": "结构化事实与事件抽取",
+  "store": "实体/事件混合存储",
+  "retrieve": "结构化与语义联合检索",
+  "inject": "按问题组织证据",
+  "llm_extract": true
  }
 }

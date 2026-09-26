@@ -1,6 +1,6 @@
 # MAP Platform
 
-MAP Platform is a reproducible evaluation workspace for long-context memory systems. It combines a structured memory method, unified LoCoMo/LongMemEval evaluation, diagnostic analysis, and a browser-based result viewer.
+MAP Platform is a reproducible evaluation workspace for long-context memory systems. It combines a structured memory method, unified benchmark evaluation, diagnostic analysis, and a browser-based result viewer.
 
 This directory is the curated public release. It is designed for a fresh GitHub repository and excludes private credentials, model weights, API caches, and large transient experiment directories.
 
@@ -60,7 +60,7 @@ The runner supports LoCoMo and LongMemEval adapters, system preflight checks, in
 
 ## Frontend viewer
 
-`map_eval_frontend_legacy/` contains the MAP evaluation viewer for system profiles, mechanism flows, funnel summaries, and sample traces. Its `public-data/` files are demonstration data. Regenerate them with `scripts/build_data.py` for a new public result bundle. Do not add private traces or API responses.
+`map_eval_frontend_legacy/` contains the legacy viewer for system profiles, mechanism flows, funnel summaries, and sample traces. Its checked-in `public-data/` is a LoCoMo-only baseline bundle aligned with the paper's comparison and MemPath lifecycle tables. It intentionally excludes BIDE's own results and private traces; unavailable diagnostic fields are shown as `—`.
 
 ## Installation
 
@@ -88,6 +88,16 @@ PYTHONPATH=src python -m pytest -q tests
 ```
 
 Use a small dataset slice or the checked-in fixture first. Full experiments require the original dataset, local model services, and a judge endpoint.
+
+## Paper result status
+
+The public code bundle includes the final BIDE pipeline contract and the verified
+LoCoMo headline counts documented in `BIDE/docs/MAIN_EXPERIMENT_IMPLEMENTATION.md`.
+It does not redistribute BIDE private records, request/response logs, frozen
+per-question outputs, ablation tables, MEMPATH alignment annotations, or paper
+figures. The legacy viewer contains benchmark demonstration data only and is not
+a BIDE result archive. Publish those materials separately only after checking
+dataset redistribution and privacy permissions.
 
 ## Data and reproducibility
 

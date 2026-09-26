@@ -1,316 +1,81 @@
 {
  "locomo": {
-  "current_memory": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.5214,
-   "inject": 0.5221,
-   "utilize": 0.4253,
-   "answer": 0.2623,
-   "accuracy_given_gold": 0.4962,
-   "failure_stages": {
-    "success": 404,
-    "retrieval": 687,
-    "answer_generation": 330,
-    "retrieval_or_prompt_partial": 116,
-    "unknown": 3
-   },
-   "n": 1540
-  },
   "full_context": {
-   "gold_exists": 0.9974,
+   "gold_exists": null,
    "build": null,
-   "retrieval": 0.9942,
-   "inject": 0.9942,
-   "utilize": 0.9877,
-   "answer": 0.5058,
-   "accuracy_given_gold": 0.5115,
-   "failure_stages": {
-    "answer_generation": 743,
-    "success": 779,
-    "system_error": 15,
-    "retrieval_or_prompt_partial": 3
-   },
-   "n": 1540
-  },
-  "langmem": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.6526,
-   "inject": 0.6526,
-   "utilize": 0.5266,
-   "answer": 0.3318,
-   "accuracy_given_gold": 0.5253,
-   "failure_stages": {
-    "success": 511,
-    "answer_generation": 385,
-    "retrieval_or_prompt_partial": 147,
-    "retrieval": 493,
-    "unknown": 4
-   },
-   "n": 1540
-  },
-  "letta": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.7662,
-   "inject": 0.7844,
-   "utilize": 0.6539,
-   "answer": 0.4299,
-   "accuracy_given_gold": 0.5948,
-   "failure_stages": {
-    "success": 662,
-    "answer_generation": 389,
-    "retrieval": 335,
-    "retrieval_or_prompt_partial": 150,
-    "unknown": 4
-   },
-   "n": 1540
-  },
-  "mem0": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.8019,
-   "inject": 0.8019,
-   "utilize": 0.6584,
-   "answer": 0.3864,
-   "accuracy_given_gold": 0.5079,
-   "failure_stages": {
-    "success": 595,
-    "answer_generation": 499,
-    "retrieval": 277,
-    "retrieval_or_prompt_partial": 165,
-    "unknown": 4
-   },
-   "n": 1540
-  },
-  "memgpt": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.7662,
-   "inject": 0.7844,
-   "utilize": 0.6539,
-   "answer": 0.4305,
-   "accuracy_given_gold": 0.5978,
-   "failure_stages": {
-    "success": 663,
-    "answer_generation": 387,
-    "retrieval": 334,
-    "retrieval_or_prompt_partial": 152,
-    "unknown": 4
-   },
-   "n": 1540
-  },
-  "memorybank": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.2552,
-   "inject": 0.2552,
-   "utilize": 0.161,
-   "answer": 0.0571,
-   "accuracy_given_gold": 0.2621,
-   "failure_stages": {
-    "answer_generation": 183,
-    "retrieval": 1132,
-    "success": 88,
-    "retrieval_or_prompt_partial": 133,
-    "unknown": 4
-   },
-   "n": 1540
-  },
-  "no_memory": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.0,
-   "inject": 0.0,
-   "utilize": 0.0,
-   "answer": 0.0078,
+   "retrieval": null,
+   "inject": null,
+   "utilize": null,
+   "answer": 0.631,
    "accuracy_given_gold": null,
-   "failure_stages": {
-    "unknown": 1528,
-    "success": 12
-   },
+   "failure_stages": {},
    "n": 1540
-  },
-  "readagent": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.7636,
-   "inject": 0.7974,
-   "utilize": 0.6695,
-   "answer": 0.4162,
-   "accuracy_given_gold": 0.5713,
-   "failure_stages": {
-    "success": 641,
-    "answer_generation": 402,
-    "retrieval": 344,
-    "retrieval_or_prompt_partial": 149,
-    "unknown": 4
-   },
-   "n": 1540
-  },
-  "simple_vector": {
-   "gold_exists": 0.9974,
-   "build": null,
-   "retrieval": 0.4487,
-   "inject": 0.4487,
-   "utilize": 0.3734,
-   "answer": 0.2539,
-   "accuracy_given_gold": 0.6,
-   "failure_stages": {
-    "success": 391,
-    "retrieval": 819,
-    "answer_generation": 230,
-    "retrieval_or_prompt_partial": 97,
-    "unknown": 3
-   },
-   "n": 1540
-  }
- },
- "longmemeval": {
-  "current_memory": {
-   "gold_exists": 1.0,
-   "build": null,
-   "retrieval": 0.896,
-   "inject": 0.896,
-   "utilize": 0.684,
-   "answer": 0.396,
-   "accuracy_given_gold": 0.5322,
-   "failure_stages": {
-    "success": 198,
-    "answer_generation": 160,
-    "retrieval": 52,
-    "retrieval_or_prompt_partial": 90
-   },
-   "n": 500
-  },
-  "full_context": {
-   "gold_exists": 1.0,
-   "build": null,
-   "retrieval": 1.0,
-   "inject": 1.0,
-   "utilize": 1.0,
-   "answer": 0.618,
-   "accuracy_given_gold": 0.618,
-   "failure_stages": {
-    "success": 309,
-    "answer_generation": 191
-   },
-   "n": 500
-  },
-  "langmem": {
-   "gold_exists": 1.0,
-   "build": null,
-   "retrieval": 0.586,
-   "inject": 0.588,
-   "utilize": 0.298,
-   "answer": 0.322,
-   "accuracy_given_gold": 0.7785,
-   "failure_stages": {
-    "success": 161,
-    "retrieval_or_prompt_partial": 113,
-    "retrieval": 193,
-    "answer_generation": 33
-   },
-   "n": 500
-  },
-  "letta": {
-   "gold_exists": 1.0,
-   "build": null,
-   "retrieval": 0.898,
-   "inject": 0.898,
-   "utilize": 0.724,
-   "answer": 0.434,
-   "accuracy_given_gold": 0.5608,
-   "failure_stages": {
-    "success": 217,
-    "retrieval": 45,
-    "answer_generation": 159,
-    "system_error": 4,
-    "retrieval_or_prompt_partial": 75
-   },
-   "n": 500
-  },
-  "mem0": {
-   "gold_exists": 1.0,
-   "build": null,
-   "retrieval": 0.934,
-   "inject": 0.934,
-   "utilize": 0.802,
-   "answer": 0.392,
-   "accuracy_given_gold": 0.4514,
-   "failure_stages": {
-    "success": 196,
-    "retrieval": 29,
-    "retrieval_or_prompt_partial": 55,
-    "answer_generation": 220
-   },
-   "n": 500
-  },
-  "memgpt": {
-   "gold_exists": 1.0,
-   "build": null,
-   "retrieval": 0.898,
-   "inject": 0.898,
-   "utilize": 0.724,
-   "answer": 0.438,
-   "accuracy_given_gold": 0.5663,
-   "failure_stages": {
-    "success": 219,
-    "retrieval": 46,
-    "answer_generation": 157,
-    "system_error": 4,
-    "retrieval_or_prompt_partial": 74
-   },
-   "n": 500
   },
   "memorybank": {
    "gold_exists": 1.0,
    "build": null,
-   "retrieval": 0.712,
-   "inject": 0.934,
-   "utilize": 0.808,
-   "answer": 0.26,
-   "accuracy_given_gold": 0.3094,
-   "failure_stages": {
-    "success": 130,
-    "answer_generation": 170,
-    "retrieval": 130,
-    "retrieval_or_prompt_partial": 70
-   },
-   "n": 500
+   "retrieval": 0.2585,
+   "inject": 0.2593,
+   "utilize": 0.2593,
+   "answer": 0.2961,
+   "accuracy_given_gold": null,
+   "failure_stages": {},
+   "n": 1540
   },
   "readagent": {
    "gold_exists": 1.0,
    "build": null,
-   "retrieval": 0.876,
-   "inject": 0.876,
-   "utilize": 0.69,
-   "answer": 0.414,
-   "accuracy_given_gold": 0.5536,
-   "failure_stages": {
-    "success": 207,
-    "retrieval": 61,
-    "answer_generation": 154,
-    "retrieval_or_prompt_partial": 78
-   },
-   "n": 500
+   "retrieval": 0.7363,
+   "inject": 0.9987,
+   "utilize": 0.9987,
+   "answer": 0.7448,
+   "accuracy_given_gold": null,
+   "failure_stages": {},
+   "n": 1540
   },
-  "simple_vector": {
+  "mem0": {
    "gold_exists": 1.0,
    "build": null,
-   "retrieval": 0.896,
-   "inject": 0.896,
-   "utilize": 0.684,
-   "answer": 0.396,
-   "accuracy_given_gold": 0.5322,
-   "failure_stages": {
-    "success": 198,
-    "answer_generation": 160,
-    "retrieval": 52,
-    "retrieval_or_prompt_partial": 90
-   },
-   "n": 500
+   "retrieval": 0.9037,
+   "inject": 0.9017,
+   "utilize": 0.9017,
+   "answer": 0.8039,
+   "accuracy_given_gold": null,
+   "failure_stages": {},
+   "n": 1540
+  },
+  "mirix": {
+   "gold_exists": 1.0,
+   "build": null,
+   "retrieval": 0.808,
+   "inject": 0.7877,
+   "utilize": 0.7877,
+   "answer": 0.8351,
+   "accuracy_given_gold": null,
+   "failure_stages": {},
+   "n": 1540
+  },
+  "everos": {
+   "gold_exists": 1.0,
+   "build": null,
+   "retrieval": 0.7596,
+   "inject": 0.7596,
+   "utilize": 0.7596,
+   "answer": 0.8019,
+   "accuracy_given_gold": null,
+   "failure_stages": {},
+   "n": 1540
+  },
+  "mnemis": {
+   "gold_exists": 1.0,
+   "build": null,
+   "retrieval": 0.9368,
+   "inject": 0.9585,
+   "utilize": 0.9585,
+   "answer": 0.8526,
+   "accuracy_given_gold": null,
+   "failure_stages": {},
+   "n": 1540
   }
  }
 }

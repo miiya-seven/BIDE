@@ -5,15 +5,14 @@ build_data.py — 把后端评测产物聚合成前端用的精简 JSON。
 
 设计见 map-eval-frontend-DESIGN.md。核心原则:
 - 五阶段流水线:构建 → 检索 → 注入 → 利用 → 回答
-- cat5 一律排除(论文口径只报 cat1-4 / LongMemEval 全类型)
+- cat5 一律排除(公开 LoCoMo 口径只报 cat1-4)
 - 数字必须可追溯到后端 per_sample / CSV
 - 全量记忆库(构建侧单题溯源)暂缺,预留接口
 
 数据来源:
-- LoCoMo:  outputs-5.3/locomo-use1/systems/<sys>/per_sample_results.jsonl  (从 per_sample 现算)
-- LongMemEval: outputs-5.3/output-longmemeval/systems/<sys>/  (有现成聚合 CSV + per_sample)
+- LoCoMo:  <input-root>/locomo-use1/systems/<sys>/per_sample_results.jsonl  (从 per_sample 现算)
 
-产出到 map-eval-frontend/public/data/:
+产出到 map_eval_frontend_legacy/public-data/:
 - overview.json        各 benchmark 各系统的榜单+五阶段指标
 - funnel.json          各系统五阶段留存率 + 失败归因(总体&分类别)
 - systems.json         各系统机制画像(身份卡)
@@ -25,15 +24,11 @@ import collections
 from pathlib import Path
 
 # ---- 路径 ----
-ROOT = Path("D:/code/map_platform/outputs-5.3")
+ROOT = Path(os.environ.get("BIDE_EVAL_INPUT_ROOT", "./evaluation_outputs"))
 LOCOMO_DIR = ROOT / "locomo-use1" / "systems"
-LME_DIR = ROOT / "output-longmemeval" / "systems"
 OUT = Path(__file__).resolve().parent.parent / "public" / "data"
 
-BENCHMARKS = {
-    "locomo": {"dir": LOCOMO_DIR, "label": "LoCoMo", "exclude_cat": "5"},
-    "longmemeval": {"dir": LME_DIR, "label": "LongMemEval", "exclude_cat": None},
-}
+BENCHMARKS = {"locomo": {"dir": LOCOMO_DIR, "label": "LoCoMo", "exclude_cat": "5"}}
 
 # 系统机制画像(基于适配器代码精读,见记忆 system-mechanisms-from-code)
 SYSTEM_MECHANISMS = {

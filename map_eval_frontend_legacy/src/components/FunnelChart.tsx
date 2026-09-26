@@ -99,7 +99,7 @@ function buildDiagnosis(funnel: Funnel, worstIdx: number, worstDrop: number): st
   // 判断利用能力
   if (funnel.accuracy_given_gold !== null && funnel.accuracy_given_gold < 0.6) {
     parts.push("即便证据齐全,利用能力也偏弱(常答错)");
-  } else if (funnel.retrieval < 0.5) {
+  } else if ((funnel.retrieval ?? 0) < 0.5) {
     parts.push("检索是主要瓶颈,大量 gold 证据没被捞到");
   }
   const ag = funnel.failure_stages["answer_generation"] || 0;

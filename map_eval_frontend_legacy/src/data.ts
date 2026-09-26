@@ -1,32 +1,31 @@
 // 数据类型 + 加载器。数据来自 public/data/*.json(由 scripts/build_data.py 生成)。
 // 五阶段流水线:构建 build → 检索 retrieval → 注入 inject → 利用 utilize → 回答 answer
 
-export type Benchmark = "locomo" | "longmemeval";
+export type Benchmark = "locomo";
 
 export const BENCHMARK_LABELS: Record<Benchmark, string> = {
   locomo: "LoCoMo",
-  longmemeval: "LongMemEval",
 };
 
 export interface OverviewRow {
   system: string;
   n: number;
   answer_accuracy: number;
-  retrieval_hit: number;
-  prompt_hit: number;
-  gold_in_prompt: number;
+  retrieval_hit: number | null;
+  prompt_hit: number | null;
+  gold_in_prompt: number | null;
   avg_total_tokens: number | null;
   avg_latency: number | null;
   oracle?: "upper" | "lower" | null;
 }
 
 export interface Funnel {
-  gold_exists: number;
+  gold_exists: number | null;
   build: number | null;
-  retrieval: number;
-  inject: number;
-  utilize: number;
-  answer: number;
+  retrieval: number | null;
+  inject: number | null;
+  utilize: number | null;
+  answer: number | null;
   accuracy_given_gold: number | null;
   failure_stages: Record<string, number>;
   n: number;
