@@ -1,0 +1,17 @@
+{
+  "questions": 0,
+  "graph_edges": 0,
+  "propositions": 0,
+  "arms": [
+    "occ_raw",
+    "occ_assertion",
+    "occ_structured",
+    "occ_consensus"
+  ],
+  "candidate_size": 128,
+  "old_candidate_used": false,
+  "reranker_used": false,
+  "gold_used": false,
+  "query_source": "V41_QUERIES_REBUILT.jsonl",
+  "query_schema": "v41-query-rebuilt-v1"
+}

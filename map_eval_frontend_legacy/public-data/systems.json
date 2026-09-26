@@ -1,0 +1,74 @@
+{
+ "mem0": {
+  "build": "LLM抽取语义记忆(SDK infer,黑盒)",
+  "store": "qdrant向量库",
+  "retrieve": "语义相似度检索(SDK黑盒)",
+  "inject": "检索记忆平铺中段",
+  "llm_extract": true
+ },
+ "memorybank": {
+  "build": "时间分桶→chunk抽取+时段摘要",
+  "store": "分层(摘要+细节)+遗忘曲线",
+  "retrieve": "0.7语义+0.3保留权重,命中强化",
+  "inject": "摘要在前+细节在后",
+  "llm_extract": true
+ },
+ "langmem": {
+  "build": "语义+程序性双桶抽取(SDK黑盒)",
+  "store": "langgraph向量双桶",
+  "retrieve": "语义检索+query聚焦截断",
+  "inject": "程序性进system+语义进中段",
+  "llm_extract": true
+ },
+ "letta": {
+  "build": "每8条一组写入归档(server黑盒)",
+  "store": "核心block+归档向量库",
+  "retrieve": "归档段落检索(黑盒)+词重叠回退",
+  "inject": "核心进system+归档进中段",
+  "llm_extract": false
+ },
+ "memgpt": {
+  "build": "每8条一组写入归档(server黑盒)",
+  "store": "核心block+归档向量库",
+  "retrieve": "归档段落检索(黑盒)+词重叠回退",
+  "inject": "核心进system+归档进中段",
+  "llm_extract": false
+ },
+ "readagent": {
+  "build": "按350词分页→gist摘要+原文双层",
+  "store": "gist+raw page双层",
+  "retrieve": "LLM选页lookup(非相似度)+词重叠回退",
+  "inject": "gist在前+展开页在后",
+  "llm_extract": false
+ },
+ "simple_vector": {
+  "build": "每turn存原文(非LLM)",
+  "store": "纯Python TF-IDF",
+  "retrieve": "TF-IDF余弦top-k",
+  "inject": "平铺中段",
+  "llm_extract": false
+ },
+ "current_memory": {
+  "build": "用数据集observation事实(非LLM)",
+  "store": "纯Python TF-IDF",
+  "retrieve": "TF-IDF余弦top-k",
+  "inject": "平铺中段",
+  "llm_extract": false
+ },
+ "full_context": {
+  "build": "每turn一条(带session)",
+  "store": "全turn",
+  "retrieve": "只喂gold session(oracle上界)",
+  "inject": "分session压缩",
+  "llm_extract": false,
+  "oracle": "upper"
+ },
+ "no_memory": {
+  "build": "无",
+  "store": "无",
+  "retrieve": "无",
+  "inject": "无记忆",
+  "llm_extract": false,
+  "oracle": "lower"
+ }
+}

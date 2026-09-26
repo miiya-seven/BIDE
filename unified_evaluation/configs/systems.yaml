@@ -1,0 +1,31 @@
+systems:
+  no_memory:
+    status: runnable
+    note: Question-only lower-bound baseline.
+  full_context:
+    status: runnable
+    note: Full-history upper-bound baseline.
+  simple_vector:
+    status: runnable
+    note: Local TF-IDF retrieval baseline with one memory chunk per raw history unit.
+  current_memory:
+    status: runnable
+    note: Uses LoCoMo observation memories when available and falls back to raw history units.
+  mem0:
+    status: runnable
+    note: Uses official mem0ai package with real memory extraction and vector retrieval.
+  langmem:
+    status: runnable
+    note: Uses official langmem MemoryStoreManager with semantic/procedural memory separation.
+  memgpt:
+    status: runnable
+    note: Uses official Letta client as the MemGPT-compatible adapter.
+  letta:
+    status: runnable
+    note: Uses official Letta agent with core memory blocks and archival passage retrieval.
+  memorybank:
+    status: runnable
+    note: Reimplemented from the official MemoryBank algorithm with time-bucket summaries, retention weights, and retrieval.
+  readagent:
+    status: runnable
+    note: Reimplemented from the official ReadAgent gist-memory and page look-up workflow.

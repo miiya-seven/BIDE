@@ -1,0 +1,9 @@
+{
+  "dataset": "data/locomo10.json",
+  "initial_budgets": [10, 20],
+  "arms": ["DIRECT", "CHECKED"],
+  "max_gap_queries": 2,
+  "max_added_raw": 5,
+  "retrieval_scope": "same_conversation",
+  "gold_visibility": "after_generation_freeze"
+}

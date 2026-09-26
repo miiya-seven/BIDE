@@ -1,0 +1,5 @@
+models:
+  qwen_reranker: ${QWEN_RERANKER_MODEL}
+  bge_m3: ${BGE_M3_MODEL}
+  splade: ${SPLADE_MODEL}
+  answer_model: ${ANSWER_MODEL}

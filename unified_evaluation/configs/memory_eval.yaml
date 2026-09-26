@@ -1,0 +1,15 @@
+dataset: locomo
+data_path: /path/to/locomo.json
+output_dir: outputs/locomo_eval
+systems: [no_memory, full_context, simple_vector, current_memory]
+top_k: 5
+skip_unavailable: true
+llm_provider: mock
+models:
+  generation_model: local-generation-model
+  embedding_model: local-embedding-model
+env:
+  OPENAI_API_KEY: dummy
+  OPENAI_BASE_URL:
+  EMBEDDING_API_KEY: dummy
+  EMBEDDING_BASE_URL:

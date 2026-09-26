@@ -1,0 +1,9 @@
+{
+  "models": {
+    "qwen_reranker": "",
+    "bge_m3": "",
+    "splade": "",
+    "answer_model": ""
+  },
+  "note": "paths are environment supplied; weights are not committed"
+}

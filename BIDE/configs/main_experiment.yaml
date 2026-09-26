@@ -1,0 +1,11 @@
+schema_version: public-bide-v1
+services:
+  generation:
+    base_url: ${GENERATION_BASE_URL}
+    model: ${GENERATION_MODEL}
+    auth_env: GENERATION_API_KEY
+  judge:
+    base_url: ${JUDGE_BASE_URL}
+    model: ${JUDGE_MODEL}
+    auth_env: JUDGE_API_KEY
+# Set values through a private local copy or environment-aware launcher.

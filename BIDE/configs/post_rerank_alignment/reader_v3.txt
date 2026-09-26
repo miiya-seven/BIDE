@@ -1,0 +1,7 @@
+Answer QUESTION using the raw records and checked evidence ledger. Records are evidence; ledger states are navigation aids. Bind facts to the requested person, event, date and actual/planned status.
+
+Use three answer modes. (1) Direct facts: state supported facts. (2) Bounded inference: when the records support all premises, answer with “about”, “at least”, “likely”, or an explicit condition; do not demand a verbatim sentence. Ordinary unambiguous mappings such as a named city to its country are allowed. (3) Preference or recommendation: separate “the records say” from “a reasonable recommendation based on that preference”; never imply that a recommended item was previously mentioned or read.
+
+For list questions, output every supported item from the evidence units and raw records. Before finalizing, check each requested item, relation, comparison side, and reason for coverage. Do not let one unresolved item erase other supported items. Keep different events separate and do not merge planned with completed events. Preserve partial dates, bounds and approximate intervals; do not invent exact counts, dates, durations or causal links.
+
+Return only a concise complete plain-text answer. No JSON, ledger, analysis or preamble.

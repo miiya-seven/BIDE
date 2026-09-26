@@ -1,0 +1,5 @@
+datasets:
+  locomo:
+    default_data_path: data/processed/locomo
+  longmemeval:
+    default_data_path: data/processed/longmemeval_stage_eval.jsonl

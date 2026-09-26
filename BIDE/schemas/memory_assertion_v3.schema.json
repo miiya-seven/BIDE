@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MemoryAssertionBundleV3", "type": "object",
+  "required": ["raw_id", "clauses", "assertions", "coverage_ledger"],
+  "properties": {
+    "raw_id": {"type": "string"},
+    "clauses": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["clause_id", "text", "start", "end"], "properties": {"clause_id": {"type": "string"}, "text": {"type": "string", "minLength": 1}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}}, "additionalProperties": false}},
+    "assertions": {"type": "array", "items": {"type": "object", "required": ["assertion_id", "kind", "subject", "relation", "typed_value", "roles", "polarity", "scope", "provenance", "retrieval_text", "independently_retrievable"], "properties": {
+      "assertion_id": {"type": "string"}, "kind": {"enum": ["DIRECT", "DERIVED_RETRIEVAL_ONLY", "EPISODE_CONTEXT", "KNOWLEDGE_BRIDGE"]},
+      "subject": {"type": "string", "minLength": 1}, "relation": {"type": "string", "minLength": 1},
+      "typed_value": {"type": "object", "required": ["type", "value"], "properties": {"type": {"enum": ["PERSON", "TEXT", "TIME", "DURATION", "LOCATION", "BOOLEAN", "COUNT", "ACTIVITY", "ATTITUDE", "IDENTITY", "RELATIONSHIP_STATUS"]}, "value": {"type": ["string", "number", "boolean"]}}, "additionalProperties": false},
+      "roles": {"type": "object", "additionalProperties": {"type": "string"}},
+      "polarity": {"enum": ["POSITIVE", "NEGATIVE", "CONTRASTED"]},
+      "scope": {"type": "object", "required": ["temporal", "location", "time_owner"], "properties": {"temporal": {"type": ["string", "null"]}, "location": {"type": ["string", "null"]}, "time_owner": {"type": ["string", "null"]}}, "additionalProperties": false},
+      "provenance": {"type": "object", "required": ["raw_ids", "clause_ids", "rule_id", "derivation_path"], "properties": {"raw_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "clause_ids": {"type": "array", "items": {"type": "string"}}, "rule_id": {"type": ["string", "null"]}, "derivation_path": {"type": "array", "items": {"type": "string"}}}, "additionalProperties": false},
+      "retrieval_text": {"type": "string", "minLength": 8}, "independently_retrievable": {"const": true},
+      "list_keys": {"type": "object", "properties": {"answer_value": {"type": ["string", "null"]}, "occurrence": {"type": ["string", "null"]}, "participant": {"type": ["string", "null"]}, "side": {"type": ["string", "null"]}}, "additionalProperties": false}
+    }, "additionalProperties": false}},
+    "coverage_ledger": {"type": "array", "items": {"type": "object", "required": ["clause_id", "status", "assertion_ids"], "properties": {"clause_id": {"type": "string"}, "status": {"enum": ["ASSERTED", "NON_PROPOSITIONAL", "UNRESOLVED"]}, "assertion_ids": {"type": "array", "items": {"type": "string"}}, "reason": {"type": ["string", "null"]}}, "additionalProperties": false}}
+  }, "additionalProperties": false
+}

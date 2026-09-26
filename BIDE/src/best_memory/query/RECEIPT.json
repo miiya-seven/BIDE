@@ -1,0 +1,9 @@
+{
+  "questions": 105,
+  "rows": 105,
+  "status": {
+    "VALIDATED": 105
+  },
+  "model": "gpt-4o-mini",
+  "gold_used": false
+}

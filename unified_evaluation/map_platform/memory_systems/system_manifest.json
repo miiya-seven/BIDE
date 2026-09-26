@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "systems": {
+    "no_memory": {"lifecycle": "active_control", "identity": "local_control", "main_table_eligible": true},
+    "full_context": {"lifecycle": "active_control", "identity": "local_control", "main_table_eligible": true},
+    "simple_vector": {"lifecycle": "analysis_only", "identity": "local_baseline", "main_table_eligible": false},
+    "current_memory": {"lifecycle": "analysis_only", "identity": "local_baseline", "main_table_eligible": false},
+    "mem0": {"lifecycle": "active_baseline", "identity": "official_sdk_local_benchmark_adapter", "main_table_eligible": true},
+    "memorybank": {"lifecycle": "active_baseline", "identity": "official_source_benchmark_adaptation", "main_table_eligible": true, "source": "external_systems/MemoryBank", "commit": "cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9"},
+    "readagent": {"lifecycle": "active_baseline", "identity": "official_workflow_cross_domain_adaptation", "main_table_eligible": true, "source": "external_systems/ReadAgent", "commit": "569dff3e47bb708ad084d267ac554f2534d21756"},
+    "memgpt": {"lifecycle": "supplementary", "identity": "service_adapter", "main_table_eligible": false},
+    "letta": {"lifecycle": "supplementary", "identity": "service_adapter", "main_table_eligible": false},
+    "langmem": {"lifecycle": "supplementary", "identity": "sdk_adapter", "main_table_eligible": false},
+    "dual_layer": {"lifecycle": "historical", "identity": "historical_internal_method", "main_table_eligible": false},
+    "mnemis": {"lifecycle": "active_baseline", "identity": "public_code_guided_reconstruction", "main_table_eligible": true},
+    "mirix": {"lifecycle": "active_baseline", "identity": "official_server_local_benchmark_adapter", "main_table_eligible": true},
+    "everos": {"lifecycle": "historical_reference", "identity": "local_hybrid_not_evermemos", "main_table_eligible": false},
+    "evermemos": {"lifecycle": "external_official", "identity": "pinned_official_native_pipeline", "main_table_eligible": true, "source": "external_systems/EverMemOS", "commit": "5076683ab88d714390573d8f88ff3c470e51129a"},
+    "our_method": {"lifecycle": "active_our_method", "identity": "canonical_276_reproduction_pipeline_with_longmemeval_adaptation", "main_table_eligible": true, "source": "our_method/best-memory-276-repro", "datasets": ["locomo", "longmemeval"], "verification_level": "DRY_RUN_ONLY"}
+  },
+  "rules": [
+    "historical systems are excluded from default current-paper runs",
+    "pending systems cannot appear as locally reproduced results",
+    "EverOS hybrid must not be renamed EverMemOS",
+    "main-table eligibility is a design classification, not proof of successful execution",
+    "a main-table result still requires smoke/full verification and a compatible common judge contract"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "target": 2,
+  "rows": 2,
+  "counts": {
+    "VALIDATED": 0,
+    "UNCERTAIN": 0,
+    "ERROR": 2
+  },
+  "gold_used": false,
+  "model": "Qwen/Qwen3-4B-Instruct-2507"
+}

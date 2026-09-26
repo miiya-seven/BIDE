@@ -1,0 +1,20 @@
+# Copy to settings.local.yaml (ignored by git) and edit for your environment.
+dataset:
+  name: locomo
+  path: /path/to/dataset.json
+models:
+  generation: your-generation-model
+  embedding: your-embedding-model
+  reranker: your-reranker-model
+services:
+  generation_base_url: ""
+  embedding_base_url: ""
+  reranker_base_url: ""
+credentials:
+  generation_env: OPENAI_API_KEY
+  embedding_env: EMBEDDING_API_KEY
+  reranker_env: RERANKER_API_KEY
+evaluation:
+  systems: [no_memory, full_context, simple_vector, current_memory]
+  top_k: 5
+  output_dir: outputs/evaluation

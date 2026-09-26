@@ -1,0 +1,15 @@
+# Copy to settings.local.yaml (ignored by git) and edit locally.
+dataset:
+  name: locomo
+  path: /path/to/locomo.json
+models:
+  generation: your-generation-model
+  embedding: your-embedding-model
+  reranker: your-reranker-model
+services:
+  generation_base_url: ""
+  embedding_base_url: ""
+  reranker_base_url: ""
+credentials:
+  generation_env: GENERATION_API_KEY
+  judge_env: JUDGE_API_KEY

@@ -1,0 +1,1 @@
+{"id":"tiny-1","messages":[{"role":"user","content":"Alice joined a support group.","timestamp":"2024-01-02"},{"role":"assistant","content":"That sounds helpful.","timestamp":"2024-01-02"}],"questions":[{"query":"When did Alice join the support group?"}]}

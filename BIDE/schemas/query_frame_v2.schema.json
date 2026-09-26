@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QueryFrameV2",
+  "type": "object",
+  "required": ["sample_id", "question", "answer_role", "relation", "bindings", "scope", "evidence_shape", "allowed_inference", "list_protection"],
+  "properties": {
+    "sample_id": {"type": "string"},
+    "question": {"type": "string", "minLength": 1},
+    "answer_role": {"enum": ["PERSON", "VALUE", "TIME", "DURATION", "LOCATION", "BOOLEAN", "MEMBER_SET", "COUNT", "SUMMARY"]},
+    "relation": {
+      "type": "object", "required": ["family", "direction"],
+      "properties": {"family": {"type": "string", "minLength": 1}, "direction": {"enum": ["FORWARD", "INVERSE", "SYMMETRIC", "N_A"]}},
+      "additionalProperties": false
+    },
+    "bindings": {
+      "type": "object", "required": ["subject", "observer", "evaluated_subject", "participants"],
+      "properties": {
+        "subject": {"type": ["string", "null"]}, "observer": {"type": ["string", "null"]},
+        "evaluated_subject": {"type": ["string", "null"]},
+        "participants": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }, "additionalProperties": false
+    },
+    "scope": {
+      "type": "object", "required": ["polarity", "temporal", "time_owner", "location"],
+      "properties": {
+        "polarity": {"enum": ["POSITIVE", "NEGATIVE", "CONTRASTED", "UNKNOWN"]},
+        "temporal": {"type": ["string", "null"]}, "time_owner": {"type": ["string", "null"]},
+        "location": {"type": ["string", "null"]}
+      }, "additionalProperties": false
+    },
+    "evidence_shape": {"enum": ["SINGLE_ASSERTION", "SAME_EVENT_MULTI_RAW", "CROSS_EPISODE_SET", "TWO_SIDED_COMPARISON", "CAUSE_RESULT_CHAIN", "TEMPORAL_SEQUENCE", "ATTITUDE_INFERENCE"]},
+    "allowed_inference": {"type": "array", "items": {"enum": ["DIRECT_ONLY", "PARAPHRASE", "ROLE_INVERSION", "LOCATION_CONTAINMENT", "EPISODE_PARTICIPATION", "ATTITUDE_FROM_EXPLICIT_EVALUATION", "PREFERENCE_FROM_EXPLICIT_AFFECT", "COUNTERFACTUAL_FROM_STATED_CAUSE"]}, "uniqueItems": true},
+    "list_protection": {
+      "type": "object", "required": ["required_sides", "required_roles", "distinct_by", "preserve_opposition", "preserve_occurrences"],
+      "properties": {
+        "required_sides": {"type": "array", "items": {"type": "string"}},
+        "required_roles": {"type": "array", "items": {"type": "string"}},
+        "distinct_by": {"enum": ["NONE", "ANSWER_VALUE", "OCCURRENCE", "PARTICIPANT", "POLARITY"]},
+        "preserve_opposition": {"type": "boolean"}, "preserve_occurrences": {"type": "boolean"}
+      }, "additionalProperties": false
+    }
+  }, "additionalProperties": false
+}

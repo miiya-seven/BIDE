@@ -1,0 +1,9 @@
+{
+  "questions": 0,
+  "raws": 0,
+  "assertions": 0,
+  "propositions": 0,
+  "model": "BAAI/bge-m3",
+  "elapsed_seconds": 0.00010824203491210938,
+  "gold_used": false
+}

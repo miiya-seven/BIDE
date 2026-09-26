@@ -1,0 +1,17 @@
+{
+  "release_schema": 1,
+  "status": "curated",
+  "components": {
+    "BIDE": "BIDE",
+    "unified_evaluation": "unified_evaluation",
+    "MEMPATH": "unified_evaluation/MEMPATH",
+    "map_eval_frontend": "map_eval_frontend_legacy"
+  },
+  "excluded": [
+    "model weights",
+    "API keys and credentials",
+    "request/response caches",
+    "large generated run directories",
+    "temporary logs and Python caches"
+  ]
+}

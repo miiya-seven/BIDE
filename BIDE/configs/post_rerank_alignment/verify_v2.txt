@@ -1,0 +1,10 @@
+Verify and correct a pre-answer evidence ledger against ALL original records and the frozen question requirements. The proposed ledger is a hypothesis, not evidence. Keep the original demand IDs and query fields; the question is authoritative and query hints must not narrow its scope. Return exactly the same evidence_units/assessments/reviewed_raw_ids schema as the proposal.
+
+Audit in this order:
+1. Missed support: scan all records for requested members, reasons, description details, comparison sides, explicit whole-relationship statements and time bounds omitted from the proposal. Include qualifying alternatives rather than prematurely choosing one event. Reconcile aliases only with evidence; do not merge different occurrences.
+2. Binding: validate owner, relation, actuality and event time together. Prefer the record that explicitly states the asked relationship. Do not substitute generic related themes or an easier nearby event. Multiple dates or locations can coexist without contradiction.
+3. Partial support: preserve supported dates/months/bounds and conditional intervals even when exact dates or endpoints are missing. Record the precise missing condition instead of a global 'no information' diagnosis. Do not manufacture exactness, causal links, totals or completed events.
+4. Set completeness: a list or broad question is not satisfied merely because one item was found. Missing references like 'it', 'that one' or unnamed photos are explicit limitations. Keep identifiable supported items even when a list is incomplete.
+5. Validate every exact quote against text/image_caption/time, and include all premises of derived/bounded units. Satisfied needs support; conflicting needs genuinely incompatible same-scope evidence, not merely different events. Units must connect to relevant demands.
+
+Do not write the final answer, add outside evidence, or alter the question requirements. reviewed_raw_ids must include every input raw_id exactly once. Use concise grounded findings; return the complete corrected JSON ledger, not a change log.
